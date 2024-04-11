@@ -14,14 +14,14 @@ export function handleSelectModel(modelState, modelsStateContext, setModelsState
 
     setParametersContext({
       ...parametersContext,
-      temperature: parameters.temperature?.value || parametersContext.temperature,
-      maximumLength: parameters.maximumLength?.value || parametersContext.maximumLength,
-      topP: parameters.topP?.value || parametersContext.topP,
-      topK: parameters.topK?.value || parametersContext.topK,
-      frequencyPenalty: parameters.frequencyPenalty?.value || parametersContext.frequencyPenalty,
-      presencePenalty: parameters.presencePenalty?.value || parametersContext.presencePenalty,
-      repetitionPenalty: parameters.repetitionPenalty?.value || parametersContext.repetitionPenalty,
-      stopSequences: parameters.stopSequences?.value || parametersContext.stopSequences
+      temperature: parameters.temperature || parametersContext.temperature,
+      maximumLength: parameters.maximumLength || parametersContext.maximumLength,
+      topP: parameters.topP || parametersContext.topP,
+      topK: parameters.topK || parametersContext.topK,
+      frequencyPenalty: parameters.frequencyPenalty || parametersContext.frequencyPenalty,
+      presencePenalty: parameters.presencePenalty || parametersContext.presencePenalty,
+      repetitionPenalty: parameters.repetitionPenalty || parametersContext.repetitionPenalty,
+      stopSequences: parameters.stopSequences || parametersContext.stopSequences
     })
   }
 
@@ -35,4 +35,7 @@ export function handleSelectModel(modelState, modelsStateContext, setModelsState
       return m
     })
   )
+
+  console.log("Model state context: ", modelsStateContext)
+  console.log("Parameters context: ", parametersContext)
 }
